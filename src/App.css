@@ -1,6 +1,7 @@
 body{
   background-color: #ffffff;
   font-family: 'Open Sans';
+  position: relative;
 }
 .App{
   background-color: #542e8d;
@@ -47,6 +48,24 @@ body{
   color: #ffffff;
   cursor: pointer;
 }
+
+#to-do-form button:hover{
+  background-color:rgb(20, 129, 255);
+}
+
 #to-do-form button:focus{
   outline: none;
+}
+
+.reset-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+}
+
+.fav{
+  color: white;
+  text-align: center;
+  
 }

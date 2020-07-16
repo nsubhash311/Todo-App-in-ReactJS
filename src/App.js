@@ -1,5 +1,6 @@
 import React from 'react';
-import NavBar from './navBar';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './logo.svg';
 import './App.css';
 import ListItems from './ListItems'
@@ -83,21 +84,23 @@ class App extends React.Component {
  render(){
   return (
     <div>
-         <h1 style = {{backgroundColor:'#7952b3', marginTop:'0px', padding:'10px', color:'white'}}>Recipe Maker</h1>
+         <h1 className="Recipe" style = {{backgroundColor:'#7952b3', marginTop:'0px', padding:'10px', color:'white'}}>Recipe Maker</h1>
 <div className="flex">
         
       <div className="App">
-        
+      <h1 className="fav">List</h1>
         <header id="to-do-form" >
             <input type="text" placeholder="Enter task"  onChange={this.handleInput}></input>
-            <button onClick={this.addItem}>Add</button>
+            <button variant="dark" onClick={this.addItem}>Add</button>{' '}
         </header>  
         <ListItems items={this.state.items} deleteItem={this.deleteItem} addItemToFav = {this.addItemToFav} visibility="true" />        
       </div>
-      <div className="App">
+      <div className="App"> <h1 className="fav">Favourites</h1>
         <ListItems items={this.state.favItems} deleteItem={this.deleteItem} addItemToFav = {this.addItemToFav} visibility="hidden" /> 
       </div>
-    </div>   
+      
+    </div>  
+       <Button className= "reset-btn" onClick={() => window.location.reload()} variant="dark">Reset</Button>{' '}
     </div>
       
       
